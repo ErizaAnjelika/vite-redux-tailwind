@@ -36,11 +36,25 @@ const ToDoComponent = () => {
   return (
     <div className="mt-8 mb-7 mx-auto">
         
+      {/* {status === 'succeeded' && (
+        <div>
+          {todo.map((item)=>(
+             <div key={item.id}>
+          <h3 className="font-bold text-3xl text-blue-400">{item.title}</h3>
+          <p className={`font-semibold text-lg, ${item.completed ? 'text-green-600' : 'text-red-500'}`}>Completed : {item.completed ? 'YES' : 'NO'}</p>
+        </div>
+          ))}
+        </div>
+      )} */}
       {status === 'succeeded' && (
-        <div key={todo.id}>
+      
+         
+             <div key={todo.id}>
           <h3 className="font-bold text-3xl text-blue-400">{todo.title}</h3>
           <p className={`font-semibold text-lg, ${todo.completed ? 'text-green-600' : 'text-red-500'}`}>Completed : {todo.completed ? 'YES' : 'NO'}</p>
         </div>
+      
+        
       )}
     </div>
   );

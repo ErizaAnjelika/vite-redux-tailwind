@@ -4,7 +4,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 // createAsyncThunk => function dari redux toolkit
 export const fetchTodo = createAsyncThunk('todos/fetchTodo', async () => {
   const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+
   const data = await response.json();
+  console.log(data);
   return data;
 });
 
@@ -25,7 +27,7 @@ const todoSlice = createSlice({
   //reducer async
   extraReducers: (builder) => {
     builder
-        //addCase => property dari redux
+      //addCase => property dari redux
       // untuk loading, simpan ke state 'status'
       .addCase(fetchTodo.pending, (state) => {
         state.status = 'loading';
